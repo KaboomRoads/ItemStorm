@@ -4,6 +4,7 @@
   "package": "net.itemstorm.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "ServerLevelMixin"
   ],
   "injectors": {
     "defaultRequire": 1
