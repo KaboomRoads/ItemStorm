@@ -17,6 +17,7 @@ public class ModLanguageProvider extends FabricLanguageProvider {
 
     @Override
     public void generateTranslations(HolderLookup.Provider provider, TranslationBuilder builder) {
-        
+        builder.add("commands.itemstorm.start", "Item Storm started");
+        builder.add("commands.itemstorm.stop", "Item Storm stopped");
     }
 }

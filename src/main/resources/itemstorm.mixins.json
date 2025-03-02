@@ -4,7 +4,15 @@
   "package": "net.itemstorm.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "ServerLevelMixin"
+    "DerivedLevelDataMixin",
+    "PrimaryLevelDataMixin",
+    "ServerLevelMixin",
+    "chaos.BlockEntityMixin",
+    "chaos.LevelChunkMixin",
+    "chaos.LevelChunkSectionMixin",
+    "chaos.LevelMixin",
+    "chaos.StateHolderMixin",
+    "chaos.WorldGenRegionMixin"
   ],
   "injectors": {
     "defaultRequire": 1
