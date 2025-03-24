@@ -12,6 +12,7 @@
     "chaos.LevelChunkSectionMixin",
     "chaos.LevelMixin",
     "chaos.StateHolderMixin",
+    "chaos.TrialSpawnerDataMixin",
     "chaos.WorldGenRegionMixin"
   ],
   "injectors": {

@@ -1,5 +1,6 @@
 package net.itemstorm.mixin;
 
+import net.itemstorm.gamerule.ModGameRules;
 import net.itemstorm.mixinimpl.ModPrimaryLevelData;
 import net.minecraft.core.Holder;
 import net.minecraft.core.RegistryAccess;
@@ -9,6 +10,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.storage.WritableLevelData;
@@ -28,6 +30,9 @@ public abstract class ServerLevelMixin extends Level {
     @Shadow
     public abstract @NotNull List<ServerPlayer> players();
 
+    @Shadow
+    public abstract GameRules getGameRules();
+
     protected ServerLevelMixin(WritableLevelData levelData, ResourceKey<Level> dimension, RegistryAccess registryAccess, Holder<DimensionType> dimensionTypeRegistration, boolean isClientSide, boolean isDebug, long biomeZoomSeed, int maxChainedNeighborUpdates) {
         super(levelData, dimension, registryAccess, dimensionTypeRegistration, isClientSide, isDebug, biomeZoomSeed, maxChainedNeighborUpdates);
     }
@@ -35,7 +40,7 @@ public abstract class ServerLevelMixin extends Level {
     @Inject(method = "tick", at = @At("HEAD"))
     private void tickItemStorm(BooleanSupplier hasTimeLeft, CallbackInfo ci) {
         if (((ModPrimaryLevelData) getLevelData()).itemStorm$getItemStorm())
-            if (getGameTime() % 200 == 0) {
+            if (getGameTime() % getGameRules().getInt(ModGameRules.GIVE_TICKS) == 0) {
                 for (ServerPlayer player : players()) {
                     Item item = BuiltInRegistries.ITEM.get(random.nextInt(BuiltInRegistries.ITEM.size())).get().value();
                     player.getInventory().add(new ItemStack(item, random.nextInt(1, item.getDefaultMaxStackSize() + 1)));
