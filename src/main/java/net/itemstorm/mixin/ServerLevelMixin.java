@@ -43,7 +43,7 @@ public abstract class ServerLevelMixin extends Level {
             if (getGameTime() % getGameRules().getInt(ModGameRules.GIVE_TICKS) == 0) {
                 for (ServerPlayer player : players()) {
                     Item item = BuiltInRegistries.ITEM.get(random.nextInt(BuiltInRegistries.ITEM.size())).get().value();
-                    player.getInventory().add(new ItemStack(item, random.nextInt(1, item.getDefaultMaxStackSize() + 1)));
+                    player.getInventory().add(new ItemStack(item, random.nextInt(getGameRules().getInt(ModGameRules.MIN_STACK_SIZE), Math.min(item.getDefaultMaxStackSize() + 1, getGameRules().getInt(ModGameRules.MAX_STACK_SIZE)))));
                 }
             }
     }
