@@ -19,5 +19,7 @@ public class ModLanguageProvider extends FabricLanguageProvider {
     public void generateTranslations(HolderLookup.Provider provider, TranslationBuilder builder) {
         builder.add("commands.itemstorm.start", "Item Storm started");
         builder.add("commands.itemstorm.stop", "Item Storm stopped");
+        builder.add("generator.itemstorm.chaos", "Chaos");
+        builder.add("generator.itemstorm.skyblock", "Skyblock");
     }
 }
