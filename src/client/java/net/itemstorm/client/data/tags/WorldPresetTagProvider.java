@@ -19,6 +19,8 @@ public class WorldPresetTagProvider extends FabricTagProvider<WorldPreset> {
     protected void addTags(HolderLookup.Provider provider) {
         getOrCreateTagBuilder(WorldPresetTags.NORMAL)
                 .add(ModWorldPresets.SKYBLOCK)
+                .add(ModWorldPresets.SKYBLOCK_DUO)
+                .add(ModWorldPresets.CHAOS)
         ;
     }
 }

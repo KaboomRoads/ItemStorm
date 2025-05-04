@@ -21,5 +21,6 @@ public class ModLanguageProvider extends FabricLanguageProvider {
         builder.add("commands.itemstorm.stop", "Item Storm stopped");
         builder.add("generator.itemstorm.chaos", "Chaos");
         builder.add("generator.itemstorm.skyblock", "Skyblock");
+        builder.add("generator.itemstorm.skyblock_duo", "Skyblock Duo");
     }
 }

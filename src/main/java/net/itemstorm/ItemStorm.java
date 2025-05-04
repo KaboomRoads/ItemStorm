@@ -8,6 +8,7 @@ import net.itemstorm.worldgen.ModChunkGenerators;
 
 public class ItemStorm implements ModInitializer {
     public static final String MOD_ID = "itemstorm";
+    public static final ThreadLocal<Boolean> CHAOSGEN = ThreadLocal.withInitial(() -> false);
 
     @Override
     public void onInitialize() {

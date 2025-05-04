@@ -9,6 +9,7 @@ import net.minecraft.world.level.chunk.ChunkGenerator;
 
 public class ModChunkGenerators {
     public static MapCodec<? extends ChunkGenerator> NBT = register("nbt", NbtChunkGenerator.CODEC);
+    public static MapCodec<? extends ChunkGenerator> CHAOS = register("chaos", ChaosChunkGenerator.CODEC);
 
     public static MapCodec<? extends ChunkGenerator> register(String name, MapCodec<? extends ChunkGenerator> codec) {
         return Registry.register(BuiltInRegistries.CHUNK_GENERATOR, ResourceLocation.fromNamespaceAndPath(ItemStorm.MOD_ID, name), codec);

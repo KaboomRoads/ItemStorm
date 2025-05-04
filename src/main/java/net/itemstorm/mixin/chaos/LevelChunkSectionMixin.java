@@ -3,6 +3,7 @@ package net.itemstorm.mixin.chaos;
 import com.google.common.collect.ImmutableList;
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import net.itemstorm.ItemStorm;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -15,7 +16,7 @@ public abstract class LevelChunkSectionMixin {
     @WrapMethod(method = "setBlockState(IIILnet/minecraft/world/level/block/state/BlockState;Z)Lnet/minecraft/world/level/block/state/BlockState;")
     private BlockState modify(int x, int y, int z, BlockState blockState, boolean bl, Operation<BlockState> original) {
         BlockState modified = blockState;
-        if (false) {
+        if (ItemStorm.CHAOSGEN.get()) {
             if (!modified.isAir()) {
                 int id = BuiltInRegistries.BLOCK.getId(modified.getBlock()) + x + (z % 2 == 0 ? 3 : -3) + (y % 2 == 0 ? 2 : -2);
                 ImmutableList<BlockState> possible;
