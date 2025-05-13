@@ -21,6 +21,7 @@ import java.util.Map;
 public class ModWorldPresets {
     public static final ResourceKey<WorldPreset> SKYBLOCK = register("skyblock");
     public static final ResourceKey<WorldPreset> SKYBLOCK_DUO = register("skyblock_duo");
+    public static final ResourceKey<WorldPreset> SKYWARS = register("skywars");
     public static final ResourceKey<WorldPreset> CHAOS = register("chaos");
 
     private static ResourceKey<WorldPreset> register(String name) {
@@ -72,6 +73,7 @@ public class ModWorldPresets {
             Holder.Reference<Biome> plains = biomes.getOrThrow(Biomes.PLAINS);
             registerCustomOverworldPreset(SKYBLOCK, makeOverworld(new NbtChunkGenerator(plains, ResourceLocation.fromNamespaceAndPath(ItemStorm.MOD_ID, "skyblock"))));
             registerCustomOverworldPreset(SKYBLOCK_DUO, makeOverworld(new NbtChunkGenerator(plains, ResourceLocation.fromNamespaceAndPath(ItemStorm.MOD_ID, "skyblock_duo"))));
+            registerCustomOverworldPreset(SKYWARS, makeOverworld(new NbtChunkGenerator(plains, ResourceLocation.fromNamespaceAndPath(ItemStorm.MOD_ID, "skywars"))));
 
             Holder.Reference<MultiNoiseBiomeSourceParameterList> reference = multiNoiseBiomeSourceParameterLists.getOrThrow(MultiNoiseBiomeSourceParameterLists.OVERWORLD);
             Holder<NoiseGeneratorSettings> holder = noiseSettings.getOrThrow(NoiseGeneratorSettings.OVERWORLD);

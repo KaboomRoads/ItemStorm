@@ -3,5 +3,6 @@
   "commands.itemstorm.stop": "Item Storm stopped",
   "generator.itemstorm.chaos": "Chaos",
   "generator.itemstorm.skyblock": "Skyblock",
-  "generator.itemstorm.skyblock_duo": "Skyblock Duo"
+  "generator.itemstorm.skyblock_duo": "Skyblock Duo",
+  "generator.itemstorm.skywars": "Skywars"
 }

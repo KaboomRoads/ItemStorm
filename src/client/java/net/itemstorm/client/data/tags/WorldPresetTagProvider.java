@@ -20,6 +20,7 @@ public class WorldPresetTagProvider extends FabricTagProvider<WorldPreset> {
         getOrCreateTagBuilder(WorldPresetTags.NORMAL)
                 .add(ModWorldPresets.SKYBLOCK)
                 .add(ModWorldPresets.SKYBLOCK_DUO)
+                .add(ModWorldPresets.SKYWARS)
                 .add(ModWorldPresets.CHAOS)
         ;
     }
